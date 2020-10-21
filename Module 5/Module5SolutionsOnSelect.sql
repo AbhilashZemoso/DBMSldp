@@ -6,9 +6,13 @@ SELECT Statement Problems
 */
 
 /*
-select Req.EventNo,Req.DateHeld,count(Plan.EventNo) from EventRequest as Req,
- EventPlan as Plan where Req.eventNo = Plan.EventNo and Plan.WorkDate between
- '2018-12-01' and '2018-12-31' group by Plan.EventNo having count(Plan.EventNo)>1;
+select Req.EventNo,Req.DateHeld,count(Plan.EventNo) 
+from EventRequest as Req, EventPlan as Plan 
+where Req.eventNo = Plan.EventNo 
+	and Plan.WorkDate between '2018-12-01' 
+    and '2018-12-31' 
+    group by Plan.EventNo 
+    having count(Plan.EventNo)>1;
 */
 
 /*
@@ -20,9 +24,11 @@ select Req.EventNo,Req.DateHeld,count(Plan.EventNo) from EventRequest as Req,
 */
 
 /*
-select Plan.PlanNo, Plan.EventNo, Plan.WorkDate from EventPlan as Plan Join EventRequest
- as Req on Plan.EventNo = Req.EventNo Join Facility as Fac on Req.FacNo = Fac.FacNo
- where Fac.FacName = 'Basketball arena';
+select Plan.PlanNo, Plan.EventNo, Plan.WorkDate 
+from EventPlan as Plan 
+Join EventRequest as Req on Plan.EventNo = Req.EventNo 
+Join Facility as Fac on Req.FacNo = Fac.FacNo
+where Fac.FacName = 'Basketball arena';
 */
 
 /*
@@ -35,10 +41,14 @@ select Plan.PlanNo, Plan.EventNo, Plan.WorkDate from EventPlan as Plan Join Even
 */
 
 /*
-select Req.EventNo, Req.DateHeld,Status,EstCost from EventRequest as Req join 
-EventPlan as Plan ON Plan.EventNo = Req.EventNo join Employee ON Plan.EmpNo = Employee.EmpNo
-join Facility ON Req.FacNo = Facility.FacNo where FacName = 'Basketball arena' and
- EmpName = 'Mary Manager' and DateHeld between '2018-10-01' and '2018-12-31';
+select Req.EventNo, Req.DateHeld,Status,EstCost 
+from EventRequest as Req 
+join EventPlan as Plan ON Plan.EventNo = Req.EventNo 
+join Employee ON Plan.EmpNo = Employee.EmpNo
+join Facility ON Req.FacNo = Facility.FacNo 
+where FacName = 'Basketball arena' 
+	and EmpName = 'Mary Manager' 
+    and DateHeld between '2018-10-01' and '2018-12-31';
 */
 
 /*
@@ -52,10 +62,14 @@ join Facility ON Req.FacNo = Facility.FacNo where FacName = 'Basketball arena' a
 */
 
 /*
-select Line.PlanNo, Line.LineNo, ResName,NumberFld,LocName,TimeStart,TimeEnd from
- EventPlanLine as Line, ResourceTbl as Res, EventPlan as Plan, Location as Loc, Facility as Fac
- where Line.PlanNo = Plan.PlanNo and Line.ResNo = Res.Resno and Loc.LocNo = Line.LocNo 
- and  Fac.FacNo = Loc.FacNo and FacName = 'Basketball arena' and activity = 'Operation'
- and workDate between '2018-10-01' and '2018-12-31';
+select Line.PlanNo, Line.LineNo, ResName,NumberFld,LocName,TimeStart,TimeEnd 
+from EventPlanLine as Line, ResourceTbl as Res, EventPlan as Plan, Location as Loc, Facility as Fac
+where Line.PlanNo = Plan.PlanNo 
+	and Line.ResNo = Res.Resno
+    and Loc.LocNo = Line.LocNo 
+	and  Fac.FacNo = Loc.FacNo
+    and FacName = 'Basketball arena'
+    and activity = 'Operation'
+	and workDate between '2018-10-01' and '2018-12-31';
  */
  

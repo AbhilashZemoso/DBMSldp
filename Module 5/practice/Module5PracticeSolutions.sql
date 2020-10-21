@@ -5,9 +5,11 @@
 
 /*
 select eventNo,dateHeld,cus.CustNo,custName,fac.facNo, facName 
-from Facility as fac, EventRequest as eve, Customer as cus where eve.CustNo = cus.CustNo 
-AND eve.FacNo = fac.FacNo and dateHeld between (01-01-2018 and 31-12-2018)
- and city = 'Boulder';
+from Facility as fac, EventRequest as eve, Customer as cus 
+where eve.CustNo = cus.CustNo 
+	AND eve.FacNo = fac.FacNo 
+    and dateHeld between (01-01-2018 and 31-12-2018)
+	and city = 'Boulder';
 */
 
 /*
@@ -18,9 +20,11 @@ AND eve.FacNo = fac.FacNo and dateHeld between (01-01-2018 and 31-12-2018)
 
 /*
 select cus.CustNo,custName,eventNo,dateHeld,fac.facNo, facName 
-from Facility as fac, EventRequest as eve, Customer as cus where
- eve.CustNo = cus.CustNo AND eve.FacNo = fac.FacNo and 
- dateHeld between (01-01-2018 and 31-12-2018) and estcost/estAudience<0.2 ;
+from Facility as fac, EventRequest as eve, Customer as cus 
+where eve.CustNo = cus.CustNo 
+	AND eve.FacNo = fac.FacNo 
+    and  dateHeld between (01-01-2018 and 31-12-2018) 
+    and estcost/estAudience<0.2 ;
 */
 
 /*
